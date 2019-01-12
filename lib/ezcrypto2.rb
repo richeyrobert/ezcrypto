@@ -3,7 +3,7 @@ require 'digest/sha2'
 require 'digest/sha1'
 require 'base64'
 
-module EzCrypto #:nodoc:
+module EzCrypto2 #:nodoc:
 
 
 =begin rdoc
@@ -74,14 +74,14 @@ Initialize the key with raw unencoded binary key data. This needs to be at least
 Generate random key.
 =end
     def self.generate(options = {})
-      Key.new(EzCrypto::Digester.generate_key(calculate_key_size(options[:algorithm])),options)
+      Key.new(EzCrypto2::Digester.generate_key(calculate_key_size(options[:algorithm])),options)
     end
 
 =begin rdoc
 Create key generated from the given password and salt
 =end
     def self.with_password(password,salt,options = {})
-      Key.new(EzCrypto::Digester.get_key(password,salt,calculate_key_size(options[:algorithm])),options)
+      Key.new(EzCrypto2::Digester.get_key(password,salt,calculate_key_size(options[:algorithm])),options)
     end
 
 =begin rdoc
@@ -317,7 +317,7 @@ the generated file format.
 Get a Encrypter object. You have to call #final on it by yourself!
 =end
     def encrypter(target='')
-      @cipher = EzCrypto::Encrypter.new(self,target,@algorithm)
+      @cipher = EzCrypto2::Encrypter.new(self,target,@algorithm)
     end
 
 
@@ -325,7 +325,7 @@ Get a Encrypter object. You have to call #final on it by yourself!
 Get a Decrypter object. You have to call #final on it by yourself!
 =end
     def decrypter(target='')
-      @cipher = EzCrypto::Decrypter.new(self,target,@algorithm)
+      @cipher = EzCrypto2::Decrypter.new(self,target,@algorithm)
     end
 
 =begin rdoc
@@ -497,7 +497,7 @@ You probably should be using Key instead.
 Warning! The interface may change.
 
 =end
-  class Encrypter<EzCrypto::CipherWrapper #:nodoc:
+  class Encrypter<EzCrypto2::CipherWrapper #:nodoc:
 
 =begin rdoc
 
@@ -521,7 +521,7 @@ You probably should be using Key instead.
 
 Warning! The interface may change.
 =end
-  class Decrypter<EzCrypto::CipherWrapper #:nodoc:
+  class Decrypter<EzCrypto2::CipherWrapper #:nodoc:
 =begin rdoc
 
 =end

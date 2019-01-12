@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
-  s.name     = "ezcrypto"
-  s.version  = "0.7.2"
-  s.date     = "2009-3-10"
-  s.summary  = "EzCrypto - Simplified Crypto Library"
-  s.email    = "pelle@stakeventures.com"
-  s.homepage = "http://ezcrypto.rubyforge.org"
-  s.description = "EzCrypto is an easy to use wrapper around the poorly documented OpenSSL ruby library."
+  s.name     = 'ezcrypto2'
+  s.version  = '0.0.2'
+  s.date     = %q{2019-11-01}
+  s.summary  = 'EzCrypto2 - Simplified Crypto Library Take 2'
+  s.email    = 'pelle@stakeventures.com'
+  s.homepage = 'http://ezcrypto.rubyforge.org'
+  s.description = 'EzCrypto is an easy to use wrapper around the poorly documented OpenSSL ruby library.'
   s.has_rdoc = true
   s.authors  = ["Pelle Braendgaard", "Micah Wedemeyer"]
   s.files = [  "rakefile",
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
                 "CHANGELOG",
                 "init.rb",
                 "lib/active_crypto.rb",
-                "lib/ezcrypto.rb",
+                "lib/ezcrypto2.rb",
                 "lib/ezsig.rb",
                 "lib/trusted.pem",
                 "test/active_crypto_test.rb",
@@ -62,6 +62,5 @@ Gem::Specification.new do |s|
                   "test/testsigner.pem",
                   "test/valicert_class2_root.crt",
                   "test/agree2.com.cert"]
-  
-end
 
+end
