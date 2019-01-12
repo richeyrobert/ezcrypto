@@ -1,6 +1,8 @@
-= EzCrypto - Easy to use Crypto for Ruby
+= EzCrypto2 - Easy to use Crypto for Ruby
 
-EzCrypto is an easy to use wrapper around the poorly documented OpenSSL ruby library.
+EzCrypto2 is an easy to use wrapper around the poorly documented OpenSSL ruby library.
+
+This is a complete and total plagiarization of Pelle's original EzCrypto gem. I only changed one single line to remove an OpenSSL deprecation issue that I got sick of seeing. 
 
 == Features
 
@@ -17,7 +19,7 @@ http://rubyforge.org/frs/?group_id=755
 
 or install it via Ruby Gems:
 
-	gem install ezcrypto
+	gem install ezcrypto2
 
 == Simple examples
 
@@ -25,23 +27,23 @@ or install it via Ruby Gems:
 
 Generate a key using a password and a salt. Use the keys encrypt method to encrypt a strings worth of data:
 
-  @key=EzCrypto::Key.with_password "password", "system salt"
+  @key=EzCrypto2::Key.with_password "password", "system salt"
   @encrypted=@key.encrypt "Top secret should not be revealed"
     
 ==== To decrypt:
 
 Same procedure as encrypt. Generate a key using a password and a salt. Use the keys decrypt method to decrypt a strings worth of data:
 
-  @key=EzCrypto::Key.with_password "password", "system salt"
+  @key=EzCrypto2::Key.with_password "password", "system salt"
   @key.decrypt @encrypted
   
 ==== One liners:
 
 These simple examples use one line each:
 
-  @encrypted=EzCrypto::Key.encrypt_with_password "password", @salt,"Top secret should not be revealed"
+  @encrypted=EzCrypto2::Key.encrypt_with_password "password", @salt,"Top secret should not be revealed"
   
-  EzCrypto::Key.decrypt_with_password "password", @salt,@encrypted
+  EzCrypto2::Key.decrypt_with_password "password", @salt,@encrypted
 
 == Keys
 
@@ -51,25 +53,25 @@ The only class you need to know for most uses og EzCrypto is the Key class. You 
 
 The most secure type of key is the randomly generated key:
 
-  @key=EzCrypto::Key.generate
+  @key=EzCrypto2::Key.generate
   
 ==== Initializing a key with raw key data
 
 If you already have a key from some other source, you simply have to call the constructor with the raw data:
 
-  @key=EzCrypto::Key.new @binarykey
+  @key=EzCrypto2::Key.new @binarykey
   
 ==== Initializing a Key with a Base64 encoded key
 
 As seen above you can create a key from a password. This should be used if you don't want the key to be stored on disk for example:
 
-  @key=EzCrypto::Key.with_password "Secret password"
+  @key=EzCrypto2::Key.with_password "Secret password"
 
 ==== Initializing a Key with a Base64 encoded key
 
 If you already have a key from some other source in the popular Base64 encoded format, you use the decode class method:
 
-  @key=EzCrypto::Key.decode @binarykey
+  @key=EzCrypto2::Key.decode @binarykey
 
 ==== Exporting the key
 
@@ -82,7 +84,7 @@ The raw method could be used for storing in a database using a tinyblob column.
 
 == Encryption and Decryption
 
-EzCrypto is optimized for simple encryption and decryption of strings. There are encrypt/decrypt pairs for normal binary use as well as for Base64 encoded use.
+EzCrypto2 is optimized for simple encryption and decryption of strings. There are encrypt/decrypt pairs for normal binary use as well as for Base64 encoded use.
 
 ==== Regular raw use
 
@@ -123,7 +125,7 @@ A salt is just a piece of data we hash in with the password to create the key. I
 
 == License
 
-EzCrypto and ActionCrypto is released under the MIT license.
+EzCrypto2 and ActionCrypto is released under the MIT license.
 
 
 == Support
